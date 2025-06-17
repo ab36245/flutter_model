@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'ref.dart';
 
 abstract class ModelArrayDecoder {
@@ -5,6 +7,7 @@ abstract class ModelArrayDecoder {
 
   ModelArrayDecoder getArray();
   bool getBool();
+  Uint8List getBytes();
   double getFloat();
   int getInt();
   ModelMapDecoder getMap();
@@ -19,6 +22,7 @@ abstract class ModelMapDecoder {
 
   ModelArrayDecoder getArray();
   bool getBool();
+  Uint8List getBytes();
   double getFloat();
   int getInt();
   String getKey();
@@ -32,6 +36,7 @@ abstract class ModelMapDecoder {
 abstract class ModelObjectDecoder {
   ModelArrayDecoder getArray(String name);
   bool getBool(String name);
+  Uint8List getBytes(String name);
   double getFloat(String name);
   int getInt(String name);
   ModelMapDecoder getMap(String name);

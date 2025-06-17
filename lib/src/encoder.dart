@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'ref.dart';
 
 abstract class ModelArrayEncoder {
@@ -5,6 +7,7 @@ abstract class ModelArrayEncoder {
 
   ModelArrayEncoder putArray(int length);
   void putBool(bool value);
+  void putBytes(Uint8List value);
   void putFloat(double value);
   void putInt(int value);
   ModelMapEncoder putMap(int length);
@@ -19,6 +22,7 @@ abstract class ModelMapEncoder {
 
   ModelArrayEncoder putArray(int length);
   void putBool(bool value);
+  void putBytes(Uint8List value);
   void putFloat(double value);
   void putInt(int value);
   ModelMapEncoder putMap(int length);
@@ -31,6 +35,7 @@ abstract class ModelMapEncoder {
 abstract class ModelObjectEncoder {
   ModelArrayEncoder putArray(String name, int length);
   void putBool(String name, bool value);
+  void putBytes(String name, Uint8List value);
   void putFloat(String name, double value);
   void putInt(String name, int value);
   ModelMapEncoder putMap(String name, int length);
